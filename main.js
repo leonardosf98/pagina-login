@@ -1,35 +1,22 @@
 const button = document.querySelector("#submit_button");
 
-const password_value = document.querySelector("#input_password").value;
-const email_value = document.querySelector("#input_email").value;
+let password_value;
+let email_value;
 button.addEventListener("click", checkEmail);
 
 function checkEmail() {
-  if (email_value.includes("@")) {
-    checkPassword();
-  } else alert("digite um e-mail válido");
-}
-
-function checkPassword() {
-  if (password_value.length >= 8) {
-    imprimeDados();
-  } else alert("digite uma senha válida");
-}
-
-button.addEventListener("click", checkEmail);
-
-function checkEmail() {
-  let email_value = document.querySelector("#input_email").value;
-  let password_value = document.querySelector("#input_password").value;
-
+  email_value = document.querySelector("#input_email").value;
+  console.log(email_value);
   if (email_value.includes("@")) {
     checkPassword();
   } else alert("Digite um e-mail válido");
 }
 function checkPassword() {
-  if(password_value.length >= 8 && ){
+  password_value = document.querySelector("#input_password").value;
+  console.log(password_value);
+  if (password_value.length >= 8) {
     imprimeDados();
-  } else (alert("Digite uma senha válida"))
+  } else alert("Digite uma senha válida");
 }
 
 function imprimeDados() {
