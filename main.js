@@ -6,22 +6,23 @@ button.addEventListener("click", checkEmail);
 
 function checkEmail() {
   email_value = document.querySelector("#input_email").value;
-  console.log(email_value);
-  if (email_value.includes("@")) {
+  let validEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  if (validEmail.test(email_value)) {
     checkPassword();
   } else alert("Digite um e-mail válido");
 }
 function checkPassword() {
   password_value = document.querySelector("#input_password").value;
-  console.log(password_value);
-  if (password_value.length >= 8) {
+  let validPassword = /^(?=.*\d)(?=.*[A-Z]).{8,}$/;
+  if (validPassword.test(password_value)) {
     imprimeDados();
   } else alert("Digite uma senha válida");
 }
 
 function imprimeDados() {
-  console.log(email_value);
-  console.log(password_value);
+  document.write("<h2> Email: </h2> <p>" + email_value + "</p>");
+  document.write("<h2> Senha: </h2> <p>" + password_value + "</p>");
+
   /*pegar conteudo dos inputs
     imprimir no console*/
 }
